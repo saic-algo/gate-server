@@ -1,3 +1,3 @@
 # gate-server
 
-This server recevies car's position and status updates.
+This server recevies cars' positions and status updates.
