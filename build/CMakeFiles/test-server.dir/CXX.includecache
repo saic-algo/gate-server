@@ -1,0 +1,96 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-handlers/base.cpp
+Poco/JSON/Array.h
+-
+Poco/JSON/Parser.h
+-
+base.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-handlers/base.h
+
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-handlers/base.h
+memory
+-
+ctime
+-
+string
+-
+iostream
+-
+Poco/Net/HTTPRequestHandler.h
+-
+Poco/Net/HTTPServerResponse.h
+-
+Poco/Net/HTTPServerRequest.h
+-
+Poco/JSON/Object.h
+-
+../gate-registry.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-registry.h
+
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-handlers/update-car-position.cpp
+update-car-position.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-handlers/update-car-position.h
+
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-handlers/update-car-position.h
+base.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-handlers/base.h
+
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-registry.h
+map
+-
+string
+-
+
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-request-handler-factory.cpp
+iostream
+-
+regex
+-
+gate-request-handler-factory.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-request-handler-factory.h
+gate-handlers/update-car-position.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-handlers/update-car-position.h
+
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-request-handler-factory.h
+Poco/Net/HTTPRequestHandler.h
+-
+Poco/Net/HTTPRequestHandlerFactory.h
+-
+Poco/Net/HTTPServerRequest.h
+-
+gate-registry.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-registry.h
+
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-server-application.cpp
+iostream
+-
+Poco/Util/Option.h
+-
+Poco/Util/HelpFormatter.h
+-
+Poco/Net/ServerSocket.h
+-
+Poco/Net/HTTPServer.h
+-
+Poco/Net/HTTPServerParams.h
+-
+gate-server-application.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-server-application.h
+gate-request-handler-factory.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-request-handler-factory.h
+
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-server-application.h
+Poco/Util/ServerApplication.h
+-
+Poco/Util/OptionSet.h
+-
+gate-registry.h
+/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/gate-registry.h
+
