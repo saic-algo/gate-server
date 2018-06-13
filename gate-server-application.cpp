@@ -4,6 +4,19 @@
 #include <Poco/Net/ServerSocket.h>
 #include <Poco/Net/HTTPServer.h>
 #include <Poco/Net/HTTPServerParams.h>
+#include<Poco/URI.h>
+#include<Poco/Net/HTTPResponse.h>
+#include<Poco/Net/HTTPRequest.h>
+#include<Poco/Net/HTTPClientSession.h>
+#include<Poco/JSON/JSON.h>
+#include "Poco/JSON/Parser.h"
+#include "Poco/JSON/ParseHandler.h"
+#include "Poco/JSON/JSONException.h"
+#include "Poco/StreamCopier.h"
+#include "Poco/Dynamic/Var.h"
+#include "Poco/JSON/Query.h"
+#include "Poco/JSON/PrintHandler.h"
+
 #include"gate-server-application.h"
 #include"gate-request-handler-factory.h"
 
@@ -54,17 +67,59 @@ void GateServerApplication::handleHelp(const std::string&,const std::string&){
 }
 
 void sendCarData(GateRegistry *m_registry) {
+	long long tcount=m_registry->count;
+	Poco::Net::HTTPRequest request;
+	Poco::Net::HTTPResponse response;
+	Poco::Net::HTTPClientSession session;
+	Poco::URI uri(std::string("http://127.0.0.1:8000/GeoIndex/"));
+
+	session.setHost(uri.getHost());
+	session.setPort(uri.getPort());
+
+	request.setHost(uri.getHost());
+	request.setMethod(Poco::Net::HTTPRequest::HTTP_POST);
+	request.setURI(uri.getPathAndQuery());
+
 	for (;;) {
+		std::cout<<"handler time:"<<m_registry->count-tcount<<std::endl;
+		tcount=m_registry->count;
 		std::map<std::string, CarInfo> t_map;
 		m_registry->getMap(t_map);
-		std::vector<CarInfo> vc;
+
+		Poco::JSON::Object obj;
+		Poco::JSON::Array points;
+		obj.set("type", "s2");
+
+		auto nowtime=time(NULL);
 		for (auto &v : t_map) {
 			if (v.second.status == CarInfo::busy) continue;
 			if(v.second.status==CarInfo::offline) continue;
+			if(nowtime-v.second.time>=5) continue;
 			//balala
-			vc.emplace_back(v.second);
+			Poco::JSON::Array point;
+			point.add(v.second.cid);
+			point.add(v.second.lat);
+			point.add(v.second.lng);
+			points.add(point);
 		}
-		//std::cout << "deal with over" << std::endl;
+		obj.set("points",points);
+		std::cout<<"send points size:"<<points.size()<<std::endl;
+
+		std::stringstream ss;
+		obj.stringify(ss);
+
+		request.setContentType("application/json");
+		request.setContentLength(ss.str().length());
+
+		std::ostream &os=session.sendRequest(request);
+		obj.stringify(os);
+
+		std::istream &is=session.receiveResponse(response);
+		
+		std::string tempis;
+		while (is >> tempis) { std::cout << tempis; }
+		std::cout<<std::endl;
+
 		std::chrono::milliseconds dura(5000);
 		std::this_thread::sleep_for(dura);
 	}

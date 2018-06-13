@@ -26,12 +26,12 @@ bool handler(const std::string &s, std::string &cid, int &status) {
 void UpdateCarStatus::handleRequest(HTTPServerRequest &request,HTTPServerResponse &response){
 	response.setStatus(HTTPResponse::HTTP_OK);
 	auto t=request.getURI();
-	std::cout << "UpdateCarStatus_URL:" << t << std::endl;
+	//std::cout << "UpdateCarStatus_URL:" << t << std::endl;
 	std::string cid;
 	int status=0;
 	bool ok=handler(t,cid,status);
-	std::cout<<"Status:"<<ok<<std::endl;
-	std::cout<<"cid="<<cid<<" status:"<<status<<std::endl;
+	//std::cout<<"Status:"<<ok<<std::endl;
+	//std::cout<<"cid="<<cid<<" status:"<<status<<std::endl;
 
 	int rt=m_registry.UpdateCarStatus(cid,status);
 	std::ostream &ost = response.send();

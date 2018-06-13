@@ -25,7 +25,7 @@ class GateRegistry{
         std::map<std::string,CarInfo> m_map;
 		std::mutex m_lock;
     public:
-        int UpdateCarPosition(std::string cid,double lat,double lng,long long time){
+        int UpdateCarPosition(std::string cid,double lat,double lng,long long time){++count;
 			std::lock_guard<std::mutex> gurad(m_lock);
             if(!m_map.count(cid)) return -1;
             CarInfo &car=m_map[cid];
@@ -36,7 +36,7 @@ class GateRegistry{
             return 0;
         }
 
-        int UpdateCarStatus(std::string cid,int status){
+        int UpdateCarStatus(std::string cid,int status){++count;
 			std::lock_guard<std::mutex> gurad(m_lock);
             if(!m_map.count(cid)){m_map[cid]=CarInfo(cid,status);return 1;}
             m_map[cid].status=status;
@@ -47,6 +47,8 @@ class GateRegistry{
 			std::lock_guard<std::mutex> gurad(m_lock);
 			t_map = m_map;
 		}
+
+		long long count = 0;
 };
 
 #endif
