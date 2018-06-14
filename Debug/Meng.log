@@ -1,6 +1,4 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  gate-server-application.cpp
-  update-car-position.cpp
-  Generating Code...
+  query-Cars.cpp
   Meng.vcxproj -> D:\poco-1.9.0\bin\Meng.exe
   Meng.vcxproj -> D:\poco-1.9.0\bin\Meng.pdb (Full PDB)

@@ -36,6 +36,9 @@
     <ClInclude Include="gate-handlers\update-car-status.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gate-handlers\query-Cars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gate-request-handler-factory.cpp">
@@ -51,6 +54,9 @@
       <Filter>Resource Files\gate-handlers</Filter>
     </ClCompile>
     <ClCompile Include="gate-handlers\update-car-status.cpp">
+      <Filter>Resource Files\gate-handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="gate-handlers\query-Cars.cpp">
       <Filter>Resource Files\gate-handlers</Filter>
     </ClCompile>
   </ItemGroup>

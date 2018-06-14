@@ -141,7 +141,7 @@ int GateServerApplication::main(const std::vector<std::string> &){
         HTTPServer server(new GateRequestHandlerfactory(m_registry), ServerSocket(8080),new HTTPServerParams);
         server.start();
 		std::cout<<"Server started"<<std::endl;
-		std::thread m_thread(sendCarData,&m_registry);
+		//std::thread m_thread(sendCarData,&m_registry);
         waitForTerminationRequest();
 		std::cout<<"Server Stop"<<std::endl;
         server.stop();	

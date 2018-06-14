@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gate-handlers\base.h" />
+    <ClInclude Include="gate-handlers\query-Cars.h" />
     <ClInclude Include="gate-handlers\update-car-position.h" />
     <ClInclude Include="gate-handlers\update-car-status.h" />
     <ClInclude Include="gate-registry.h" />
@@ -28,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gate-handlers\base.cpp" />
+    <ClCompile Include="gate-handlers\query-Cars.cpp" />
     <ClCompile Include="gate-handlers\update-car-position.cpp" />
     <ClCompile Include="gate-handlers\update-car-status.cpp" />
     <ClCompile Include="gate-request-handler-factory.cpp" />
