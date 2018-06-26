@@ -1,0 +1,15 @@
+ngx_addon_name=ngx_http_index_gate_module
+
+SRC_FILES="                                                                 \
+        $ngx_addon_dir/ngx_http_index_gate_module.cpp                           \
+        $ngx_addon_dir/gate_registry.cpp                             \
+        "
+
+DEP_FILES="                                                                 \
+        $ngx_addon_dir/gate_registry.h                                         \
+        "
+
+
+HTTP_MODULES="$HTTP_MODULES ngx_http_index_gate_module"
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS $SRC_FILES"
+NGX_ADDON_DEPS="$NGX_ADDON_DEPS $DEP_FILES"

@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=c++14 -O2 -fopenmp   CMakeFiles/test-server.dir/gate-handlers/base.cpp.o CMakeFiles/test-server.dir/gate-handlers/update-car-position.cpp.o CMakeFiles/test-server.dir/gate-request-handler-factory.cpp.o CMakeFiles/test-server.dir/gate-server-application.cpp.o  -o test-server -rdynamic -lPocoNet -lPocoUtil -lPocoFoundation -lPocoJSON -lPocoRedis -ls2 -lh3 

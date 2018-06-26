@@ -1,3 +1,0 @@
-/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/t-jinzha/Documents/Visual Studio 2015/Projects/Meng/Meng/build/CMakeFiles/test-server.dir
